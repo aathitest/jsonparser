@@ -1,0 +1,17 @@
+<html>
+	<div style="font-size:20px">
+		<span>
+			<textarea rows="43" cols="80" id="input" placeholder="Paste your unformatted JSON here and press anywhere to generate formatted JSON" style="font-size:15px" onKeyPress="formatThis()" onChange="formatThis()"></textarea>
+		</span>&nbsp;
+		<span>
+			<textarea rows="43" cols="80" id="output" placeholder="Formatted JSON will be pasted here" style="font-size:15px"></textarea>
+		</span>
+	</div>
+	<script>
+		function formatThis(){
+			var input = document.getElementById("input").value.trim();
+			var output = JSON.stringify(JSON.parse(input), undefined, 4);
+			document.getElementById("output").value = output;
+		}
+	</script>
+</html>
